@@ -1,0 +1,52 @@
+<div class="container my-5">
+    <h1 class="my-3">Edit Candidate</h1>
+    <form #form="ngForm" (ngSubmit)="editCandidate()">
+        <div class="mb-3">
+            <label for="id" class="form-label">Id</label>
+            <input type="text" class="form-control" id="id" name="id" readonly [(ngModel)]="editCandidateDetails.id">
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="editCandidateDetails.name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="editCandidateDetails.email">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone No</label>
+            <input type="number" class="form-control" id="phone" max="10" name="phone"
+                [(ngModel)]="editCandidateDetails.phone">
+        </div>
+        <div class="mb-3">
+            <label for="sex" class="form-label">Sex</label>
+            <select class="form-control" id="sex" name="sex" [(ngModel)]="editCandidateDetails.sex">
+                <option></option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="position" class="form-label">Position</label>
+            <select class="form-control" id="position" name="position" [(ngModel)]="editCandidateDetails.position">
+                <option></option>
+                <option>ISE</option>
+                <option>ASE</option>
+                <option>SE</option>
+                <option>SSE</option>
+                <option>TL</option>
+                <option>IQA</option>
+                <option>QA</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="interview">InterviewSchdule</label>
+            <input type="datetime-local" class="form-control" id="interview" name="interview"
+                min="2024-02-03T08:00" max="2024-12-31T17:00" [(ngModel)]="editCandidateDetails.dateTime">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="button" class="btn btn-danger" (click)="deleteCandidate()">Delete</button>
+    </form>
+</div>
+

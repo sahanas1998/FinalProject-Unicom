@@ -1,0 +1,31 @@
+<div class="container my-5">
+    <h1 class="my-3">All Candidate Details</h1>
+    <table class="table" *ngIf="candidates.length > 0">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Position</th>
+                <th scope="col">Schdule</th>
+                <th scope="col">Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let candidate of candidates'>
+                <td>{{candidate.id}}</td>
+                <td>{{candidate.name}}</td>
+                <td>{{candidate.email}}</td>
+                <td>{{candidate.phone}}</td>
+                <td>{{candidate.sex}}</td>
+                <td>{{candidate.position}}</td>
+                <td>{{candidate.dateTime}}</td>
+
+                <td><a [routerLink] = "['/candidate' , 'edit' , candidate.id]">View</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <h4 *ngIf="!candidates || candidates.length <= 0" class="text-danger">Candidate is not founded</h4>
+</div>
